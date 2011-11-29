@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TorrentDownloader", "TorrentDownloader.csproj", "{FCBEFF41-AC6D-4CB1-81BB-F9712EBA46A8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonoTorrent", "..\lib\monotorrent\src\MonoTorrent\MonoTorrent.csproj", "{411A9E0E-FDC6-4E25-828A-0C2CD1CD96F8}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,21 +31,6 @@ Global
 		{FCBEFF41-AC6D-4CB1-81BB-F9712EBA46A8}.Stats|Mixed Platforms.Build.0 = Release|x86
 		{FCBEFF41-AC6D-4CB1-81BB-F9712EBA46A8}.Stats|x86.ActiveCfg = Release|x86
 		{FCBEFF41-AC6D-4CB1-81BB-F9712EBA46A8}.Stats|x86.Build.0 = Release|x86
-		{411A9E0E-FDC6-4E25-828A-0C2CD1CD96F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{411A9E0E-FDC6-4E25-828A-0C2CD1CD96F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{411A9E0E-FDC6-4E25-828A-0C2CD1CD96F8}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{411A9E0E-FDC6-4E25-828A-0C2CD1CD96F8}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{411A9E0E-FDC6-4E25-828A-0C2CD1CD96F8}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{411A9E0E-FDC6-4E25-828A-0C2CD1CD96F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{411A9E0E-FDC6-4E25-828A-0C2CD1CD96F8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{411A9E0E-FDC6-4E25-828A-0C2CD1CD96F8}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{411A9E0E-FDC6-4E25-828A-0C2CD1CD96F8}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{411A9E0E-FDC6-4E25-828A-0C2CD1CD96F8}.Release|x86.ActiveCfg = Release|Any CPU
-		{411A9E0E-FDC6-4E25-828A-0C2CD1CD96F8}.Stats|Any CPU.ActiveCfg = Stats|Any CPU
-		{411A9E0E-FDC6-4E25-828A-0C2CD1CD96F8}.Stats|Any CPU.Build.0 = Stats|Any CPU
-		{411A9E0E-FDC6-4E25-828A-0C2CD1CD96F8}.Stats|Mixed Platforms.ActiveCfg = Stats|Any CPU
-		{411A9E0E-FDC6-4E25-828A-0C2CD1CD96F8}.Stats|Mixed Platforms.Build.0 = Stats|Any CPU
-		{411A9E0E-FDC6-4E25-828A-0C2CD1CD96F8}.Stats|x86.ActiveCfg = Stats|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -40,6 +40,9 @@
     <ApplicationIcon>Properties\Icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MonoTorrent">
+      <HintPath>.\MonoTorrent.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -77,6 +80,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -90,15 +94,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="boundary.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\lib\monotorrent\src\MonoTorrent\MonoTorrent.csproj">
-      <Project>{411A9E0E-FDC6-4E25-828A-0C2CD1CD96F8}</Project>
-      <Name>MonoTorrent</Name>
-    </ProjectReference>
+    <EmbeddedResource Include="MonoTorrent.dll" />
+    <Content Include="Properties\Icon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <PostBuildEvent>copy /b  "$(TargetPath)" + "$(ProjectDir)boundary.txt" "$(ProjectDir)appended_$(TargetFileName)"
 copy /b  "$(ProjectDir)appended_$(TargetFileName)" + "$(ProjectDir)test.torrent" "$(ProjectDir)appended_$(TargetFileName)"
 move /Y "$(ProjectDir)appended_$(TargetFileName)" "$(TargetPath)"</PostBuildEvent>
