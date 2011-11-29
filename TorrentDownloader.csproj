@@ -59,6 +59,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="README" />
     <EmbeddedResource Include="frmUI.en-US.resx">
       <DependentUpon>frmUI.cs</DependentUpon>
     </EmbeddedResource>

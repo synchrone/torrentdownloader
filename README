@@ -1,0 +1,11 @@
+﻿Torrent Downloader
+=============
+A generic one-time torrent downloader workpiece
+
+Usage
+-------
+
+Append a magic marker (=TD=B in this case) and a .torrent file contents to the end of a compiled binary
+Note: Release configuration should be used, because a test.torrent is appended in a Debug configuration for testing purposes
+Then, a binary will start up, read appended torrent file and try to download it to a directory named after torrent.name entry from the torrent (except for the wrong characters, they will get replaced with an underscore)
+
