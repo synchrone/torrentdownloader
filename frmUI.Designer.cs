@@ -1,4 +1,5 @@
-﻿namespace TorrentDownloader
+﻿using System.Windows.Forms;
+namespace TorrentDownloader
 {
     partial class frmUI
     {
@@ -28,64 +29,98 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUI));
             this.barProgress = new System.Windows.Forms.ProgressBar();
-            this.btnInfo = new System.Windows.Forms.Button();
             this.lstLog = new System.Windows.Forms.ListBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblProgress = new System.Windows.Forms.Label();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.lblSpeedLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lblSpeed = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lblPeersLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lblPeersCount = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripSplitButton1 = new System.Windows.Forms.ToolStripSplitButton();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // barProgress
             // 
-            this.barProgress.Location = new System.Drawing.Point(12, 12);
+            resources.ApplyResources(this.barProgress, "barProgress");
             this.barProgress.Name = "barProgress";
-            this.barProgress.Size = new System.Drawing.Size(260, 23);
-            this.barProgress.TabIndex = 0;
-            // 
-            // btnInfo
-            // 
-            this.btnInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnInfo.Location = new System.Drawing.Point(281, 12);
-            this.btnInfo.Name = "btnInfo";
-            this.btnInfo.Size = new System.Drawing.Size(41, 23);
-            this.btnInfo.TabIndex = 1;
-            this.btnInfo.Text = "Info";
-            this.btnInfo.UseVisualStyleBackColor = true;
             // 
             // lstLog
             // 
-            this.lstLog.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.lstLog, "lstLog");
             this.lstLog.FormattingEnabled = true;
-            this.lstLog.Location = new System.Drawing.Point(12, 41);
             this.lstLog.Name = "lstLog";
-            this.lstLog.Size = new System.Drawing.Size(310, 95);
-            this.lstLog.TabIndex = 2;
             // 
-            // label1
+            // lblProgress
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(121, 17);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "label1";
+            resources.ApplyResources(this.lblProgress, "lblProgress");
+            this.lblProgress.Name = "lblProgress";
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lblSpeedLabel,
+            this.lblSpeed,
+            this.lblPeersLabel,
+            this.lblPeersCount,
+            this.toolStripStatusLabel4,
+            this.toolStripSplitButton1});
+            resources.ApplyResources(this.statusStrip1, "statusStrip1");
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.SizingGrip = false;
+            // 
+            // lblSpeedLabel
+            // 
+            this.lblSpeedLabel.Name = "lblSpeedLabel";
+            resources.ApplyResources(this.lblSpeedLabel, "lblSpeedLabel");
+            // 
+            // lblSpeed
+            // 
+            resources.ApplyResources(this.lblSpeed, "lblSpeed");
+            this.lblSpeed.Name = "lblSpeed";
+            // 
+            // lblPeersLabel
+            // 
+            this.lblPeersLabel.Name = "lblPeersLabel";
+            resources.ApplyResources(this.lblPeersLabel, "lblPeersLabel");
+            // 
+            // lblPeersCount
+            // 
+            resources.ApplyResources(this.lblPeersCount, "lblPeersCount");
+            this.lblPeersCount.Name = "lblPeersCount";
+            // 
+            // toolStripStatusLabel4
+            // 
+            this.toolStripStatusLabel4.Name = "toolStripStatusLabel4";
+            resources.ApplyResources(this.toolStripStatusLabel4, "toolStripStatusLabel4");
+            this.toolStripStatusLabel4.Spring = true;
+            // 
+            // toolStripSplitButton1
+            // 
+            this.toolStripSplitButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripSplitButton1.DropDownButtonWidth = 0;
+            resources.ApplyResources(this.toolStripSplitButton1, "toolStripSplitButton1");
+            this.toolStripSplitButton1.Name = "toolStripSplitButton1";
+            this.toolStripSplitButton1.ButtonClick += new System.EventHandler(this.toolStripSplitButton1_ButtonClick);
             // 
             // frmUI
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(334, 148);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.lstLog);
-            this.Controls.Add(this.btnInfo);
             this.Controls.Add(this.barProgress);
+            this.Controls.Add(this.lblProgress);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "frmUI";
-            this.Text = "Torrent Downloader for ";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmUI_FormClosing);
+            this.Load += new System.EventHandler(this.frmUI_Load);
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -94,9 +129,15 @@
         #endregion
 
         private System.Windows.Forms.ProgressBar barProgress;
-        private System.Windows.Forms.Button btnInfo;
         private System.Windows.Forms.ListBox lstLog;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblProgress;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel lblSpeed;
+        private System.Windows.Forms.ToolStripStatusLabel lblPeersCount;
+        private ToolStripStatusLabel lblSpeedLabel;
+        private ToolStripStatusLabel lblPeersLabel;
+        private ToolStripStatusLabel toolStripStatusLabel4;
+        private ToolStripSplitButton toolStripSplitButton1;
     }
 }
 
