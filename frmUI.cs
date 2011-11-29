@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.IO;
@@ -92,10 +91,12 @@ namespace TorrentDownloader
                 return bytes + " " + Resources.GetString("bytes/s"); ;
             }
         }
+
+        delegate void SimpleDelegate();
         void LoggerHandler(object sender, EventArgs e) {
             if (lstLog.InvokeRequired) {
-                Action wrapper = delegate(){LoggerHandler(sender,e);};
-                lstLog.Invoke(wrapper);
+                SimpleDelegate d = delegate() { LoggerHandler(sender, e); };
+                lstLog.Invoke(d);
                 return;
             }
             if (e is StatsUpdateEventArgs) {
